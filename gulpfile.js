@@ -8,7 +8,7 @@ var git = require('gulp-git');
 var fs = require('fs');
 var runSequence = require('run-sequence');
 
-gulp.task('watch', function() {
+gulp.task('test:watch', function() {
   gulp.watch(['gulpfile.js', 'test/*.js', 'kombiner.js'], ['test']);
 });
 

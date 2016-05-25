@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "test:watch": "gulp test:watch"
   },
   "repository": {
     "type": "git",
@@ -34,7 +35,6 @@
     "gulp-mocha": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
-    "run-sequence": "^1.2.1",
-    "sinon": "^1.17.4"
+    "run-sequence": "^1.2.1"
   }
 }

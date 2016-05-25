@@ -1,10 +1,9 @@
 var expect = require('chai').expect;
-var sinon = require('sinon');
 var kombiner = require('./../kombiner');
 
 
 describe('kombiner', function() {
-  it('should compose functions', function() {
+  it('should compose functions', function(done) {
     var result = [];
 
     var f1 = function() {
@@ -24,7 +23,9 @@ describe('kombiner', function() {
     };
 
     var f = kombiner(f1, f2, f3, f4);
-    f();
-    expect(result).to.be.deep.equal(['f1', 'f2', 'f3', 'f4']);  
+    f().then(function() {
+      expect(result).to.be.deep.equal(['f1', 'f2', 'f3', 'f4']);
+      done();
+    });
   });
 });
