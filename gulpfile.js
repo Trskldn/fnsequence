@@ -9,7 +9,7 @@ var fs = require('fs');
 var runSequence = require('run-sequence');
 
 gulp.task('test:watch', function() {
-  gulp.watch(['gulpfile.js', 'test/*_spec.js', 'kombiner.js'], ['test']);
+  gulp.watch(['gulpfile.js', 'test/*_spec.js', 'index.js'], ['test']);
 });
 
 gulp.task('test', function() {
@@ -21,15 +21,6 @@ gulp.task('test', function() {
     }))
     .on('error', gutil.log);
 
-});
-
-gulp.task('build', ['test'], function() {
-  return gulp.src('kombiner.js')
-    .pipe(uglify())
-    .pipe(rename({
-      extname: '.min.js'
-    }))
-    .pipe(gulp.dest(__dirname));
 });
 
 
@@ -72,7 +63,7 @@ gulp.task('create-new-tag', function(cb) {
   }
 });
 
-gulp.task('release', ['build'], function(cb) {
+gulp.task('release', ['test'], function(cb) {
   runSequence(
     'bump-version',
     'commit-changes',

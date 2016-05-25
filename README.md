@@ -1,6 +1,6 @@
-# kombiner
+# fnsequence
 
-![build status](https://travis-ci.org/Trskldn/kombiner.svg?branch=master)
+![build status](https://travis-ci.org/Trskldn/fnsequence.svg?branch=master)
 
 make function composition
 
@@ -8,20 +8,18 @@ make function composition
 
 bower
 ```bash
-$ bower i --save kombiner
+$ bower i --save fnsequence
 ```
 npm
 ```bash
-$ npm i --save kombiner
+$ npm i --save fnsequence
 ```
-
-global
-
-just  checkout `kombiner.min.js` from this repo
 
 ## Example
 
 ```js
+    var fnsequence = require('fnsequence');
+
     var f1 = function(ctx) {
         ctx.data = 'hello';
     };
@@ -40,10 +38,10 @@ just  checkout `kombiner.min.js` from this repo
         ctx.data = ctx.data + ' world';
     };
 
-    var f = kombiner(f1, [f2, f3], f4);
-    //
+    var f = fnsequence(f1, [f2, f3], f4);
     f().then(function(ctx) {
-        console.log(ctx); // {data: 'hello world', data2: Wed May 25 2016 17:55:47 GMT+0300 (EEST), asyncdata: 'foo'}
+        console.log(ctx); 
+        // {data: 'hello world', data2: Wed May 25 2016 17:55:47 GMT+0300 (EEST), asyncdata: 'foo'}
     });
 
 ```

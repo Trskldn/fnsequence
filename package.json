@@ -1,8 +1,8 @@
 {
-  "name": "kombiner",
+  "name": "fnsequence",
   "version": "0.0.2",
-  "description": "function composition",
-  "main": "kombiner.js",
+  "description": "compose function sequence",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Trskldn/kombiner.git"
+    "url": "git+ssh://git@github.com/Trskldn/fnsequence.git"
   },
   "keywords": [
     "function",
@@ -21,9 +21,9 @@
   "author": "trskldn",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Trskldn/kombiner/issues"
+    "url": "https://github.com/Trskldn/fnsequence/issues"
   },
-  "homepage": "https://github.com/Trskldn/kombiner#readme",
+  "homepage": "https://github.com/Trskldn/fnsequence#readme",
   "dependencies": {
     "promise": "^7.1.1"
   },

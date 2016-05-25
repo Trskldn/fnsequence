@@ -1,8 +1,8 @@
 var expect = require('chai').expect;
-var kombiner = require('./../kombiner');
+var fnsequence = require('./../index');
 var Promise = require('promise');
 
-describe('kombiner', function() {
+describe('fnsequence', function() {
   it('should compose functions', function() {
     var result = [];
 
@@ -32,7 +32,7 @@ describe('kombiner', function() {
       result.push('f4');
     };
 
-    var f = kombiner(f1, f2, f3, f4);
+    var f = fnsequence(f1, f2, f3, f4);
     return f().then(function() {
       expect(result).to.be.deep.equal(['f1', 'f2', 'f3', 'f4']);
     });
@@ -58,7 +58,7 @@ describe('kombiner', function() {
       cntx.data = cntx.data + ' world';
     };
 
-    var f = kombiner(f1, f2, f3, f4);
+    var f = fnsequence(f1, f2, f3, f4);
     return f().then(function(cntx) {
       expect(cntx).to.have.property('data');
       expect(cntx.data).to.be.equal('hello world');
@@ -67,11 +67,11 @@ describe('kombiner', function() {
   });
 
   it('should throw error, when no parameters is passed', function() {
-    expect(kombiner).to.throw(TypeError);
+    expect(fnsequence).to.throw(TypeError);
   });
 
   it('should work, when type of arguments is not a function', function(done) {
-    var f = kombiner('test');
+    var f = fnsequence('test');
     f().then(function() {
       done();
     });
