@@ -14,7 +14,7 @@
     var fnmap;
 
     if (args.length == 0) {
-      return function() { return Promise.resolve() };
+      throw new TypeError('arguments not passed')
     } else if (args.length == 1) {
       fnmap = Array.isArray(args[0]) ? args[0] : [args[0]];
     } else {
@@ -25,12 +25,12 @@
     return function() {
       var args = [].slice.call(arguments).concat([cntx]);
 
-      return new Promise(function(fulfill, reject) {
+      return new Promise(function(resolve, reject) {
         function next(fnArr, args) {
           var fn = fnArr.shift();
           var dfrmap = (Array.isArray(fn) ? fn : [fn]).map(function(fn) {
             if (typeof fn !== 'function') return fn;
-            return fn.apply(fn, args);
+            return fn.apply(null, args);
           });
 
           Promise.all(dfrmap)
@@ -39,7 +39,7 @@
                 if (fnArr.length > 0) {
                   next(fnArr, args);
                 } else {
-                  fulfill(cntx);
+                  resolve(cntx);
                 }
               },
               function(err) {
