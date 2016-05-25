@@ -1,0 +1,26 @@
+{
+  "name": "kombiner",
+  "version": "0.0.1",
+  "description": "composit function",
+  "main": "kombiner.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Trskldn/kombiner.git"
+  },
+  "keywords": [
+    "function",
+    "composition"
+  ],
+  "author": "trskldn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trskldn/kombiner/issues"
+  },
+  "homepage": "https://github.com/Trskldn/kombiner#readme"
+}
