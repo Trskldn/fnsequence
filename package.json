@@ -22,5 +22,19 @@
   "bugs": {
     "url": "https://github.com/Trskldn/kombiner/issues"
   },
-  "homepage": "https://github.com/Trskldn/kombiner#readme"
+  "homepage": "https://github.com/Trskldn/kombiner#readme",
+  "dependencies": {
+    "promise": "^7.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.1.0",
+    "gulp-git": "^1.7.2",
+    "gulp-mocha": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "run-sequence": "^1.2.1",
+    "sinon": "^1.17.4"
+  }
 }
