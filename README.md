@@ -2,7 +2,7 @@
 
 ![build status](https://travis-ci.org/Trskldn/fnsequence.svg?branch=master)
 
-make function composition
+run function in sequence
 
 ## Instalation
 
