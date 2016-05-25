@@ -1,7 +1,7 @@
 {
   "name": "kombiner",
   "version": "0.0.2",
-  "description": "composit function",
+  "description": "function composition",
   "main": "kombiner.js",
   "directories": {
     "test": "test"
