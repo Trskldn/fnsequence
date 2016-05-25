@@ -2,7 +2,7 @@
 
 ![build status](https://travis-ci.org/Trskldn/kombiner.svg?branch=master)
 
-multiple inheritance,with super method call, for Backbone classes
+make function composition
 
 ## Instalation
 
