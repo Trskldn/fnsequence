@@ -9,7 +9,7 @@ var fs = require('fs');
 var runSequence = require('run-sequence');
 
 gulp.task('test:watch', function() {
-  gulp.watch(['gulpfile.js', 'test/*.js', 'kombiner.js'], ['test']);
+  gulp.watch(['gulpfile.js', 'test/*_spec.js', 'kombiner.js'], ['test']);
 });
 
 gulp.task('test', function() {

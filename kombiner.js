@@ -13,7 +13,9 @@
     var cntx = {};
     var fnmap;
 
-    if (args.length == 1) {
+    if (args.length == 0) {
+      return function() { return Promise.resolve() };
+    } else if (args.length == 1) {
       fnmap = Array.isArray(args[0]) ? args[0] : [args[0]];
     } else {
       fnmap = args;
@@ -27,12 +29,13 @@
         function next(fnArr, args) {
           var fn = fnArr.shift();
           var dfrmap = (Array.isArray(fn) ? fn : [fn]).map(function(fn) {
+            if (typeof fn !== 'function') return fn;
             return fn.apply(fn, args);
           });
 
           Promise.all(dfrmap)
             .then(
-              function(cntx) {
+              function() {
                 if (fnArr.length > 0) {
                   next(fnArr, args);
                 } else {

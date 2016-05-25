@@ -28,4 +28,23 @@ describe('kombiner', function() {
       done();
     });
   });
+
+  it('should accept parameters', function() {
+    
+  }); 
+
+  it('should work, when no parameters passed', function(done) {
+    var f = kombiner();
+    f().then(function() {
+      done();
+    });
+  });
+
+  it('should work, when type of arguments is not a function', function(done) {
+    var f = kombiner('test');
+    f().then(function() {
+      done();
+    });
+  });
+
 });
